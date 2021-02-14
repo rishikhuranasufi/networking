@@ -7,7 +7,7 @@ resource "google_compute_network" "vpc" {
 // Create Subnet
 resource "google_compute_subnetwork" "subnet" {
  name          = "first-technotrainer-subnet"
- ip_cidr_range = "10.10.10.0/24"
+ ip_cidr_range = var.subnet_cidr_block
  network       = "technotrainer-vpc"
  depends_on    = [google_compute_network.vpc]
  region      = "us-west1"
